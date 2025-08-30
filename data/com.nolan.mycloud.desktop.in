@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=mycloud
+Exec=mycloud
+Icon=com.nolan.mycloud
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

@@ -1,0 +1,6 @@
+data/com.nolan.mycloud.desktop.in
+data/com.nolan.mycloud.metainfo.xml.in
+data/com.nolan.mycloud.gschema.xml
+src/main.py
+src/window.py
+src/window.ui
