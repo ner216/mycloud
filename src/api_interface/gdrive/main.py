@@ -68,8 +68,22 @@ class gdrive:
         return drive
 
 
+    # Returns a list object containing all file metadata from remote
+    def get_all_remote_file_data(self) -> list:
+        try:
+            file_list = self.drive.ListFile({
+                'q': "trashed=false",
+                'fields': "items(id, title, mimeType, parents, modifiedDate, fileSize)"
+            }).GetList()
+
+            return file_list
+        except Exception as e:
+            print(f"Error: unable to retrieve file list from Drive!\nE: {e}")
+            return None
+
+
     # Return a single file object which matches the given title and parent_id
-    def find_file_by_name(self, title: str, parent_id: str = None):
+    def get_file_by_name(self, title: str, parent_id: str = None):
         # Create search query for API
         query = f"title='{title}' and trashed=false"
         if parent_id:
